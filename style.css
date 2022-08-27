@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+body {
+    width: 614px;
+    display:flex;
+
+    background-color: #f3f3f3;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.topo {
+    width: 614px;
+    height: 80px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+
+    position: fixed;
+    top: 0px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 22px;
+    padding-right: 22px;
+    box-sizing: border-box;
+}
+
+.topo img{ 
+    width: 75px;
+    height: 53px;
+}
+
+.ion-icon1{
+    font-size: 42px;
+}
+
+.ion-icon2 {
+    font-size: 30px;
+}
+
+.escrever-mensagem{
+    width: 614px;
+    height: 80px;
+
+    position: fixed;
+    bottom: 0px;
+
+    background: #FFFFFF;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 17px;
+    padding-right: 18px;
+    box-sizing: border-box;
+}
+
+.mensagem input {
+    border: none;
+
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.mensagem input-placeholder {
+    color: #000000;
+}
+
+.mensagens {
+    width: 614px;
+
+    margin-top: 106px;
+    margin-bottom: 106px;
+    box-sizing: border-box;
+}
+
+.status-sala{
+    height: 40px;
+
+    background-color: #DCDCDC;
+    border-radius: 2px;
+
+    margin-bottom: 4px;
+    box-sizing: border-box;
+    padding: 0 8px;
+
+    display: flex;
+    align-items: center;
+
+    word-wrap: break-word;
+}
+
+.mensagem-todos{
+    height: 40px;
+
+    background: #FFFFFF;
+    border-radius: 2px;
+
+    margin-bottom: 4px;
+    box-sizing: border-box;
+    padding: 0 8px;
+
+    display: flex;
+    align-items: center;
+
+    word-wrap: break-word;
+}
+
+.mensagem-privada{
+    height: 40px;
+
+    background: #FFDEDE;
+    border-radius: 2px;
+
+    margin-bottom: 4px;
+    box-sizing: border-box;
+    padding: 0 8px;
+
+    display: flex;
+    align-items: center;
+
+    word-wrap: break-word;
+}
+
