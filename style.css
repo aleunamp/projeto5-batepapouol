@@ -14,7 +14,7 @@ body {
     width: 614px;
     height: 80px;
 
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
 
     position: fixed;
@@ -27,6 +27,91 @@ body {
     padding-left: 22px;
     padding-right: 22px;
     box-sizing: border-box;
+}
+
+.telaDeEntrada{
+    width: 100%;
+    margin: 0 auto;
+
+    background-color: #FFFFFF;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.telaDeEntrada img{
+    width: 130px;
+    height: 92px;
+
+    margin-top: 72px;
+    margin-left: 122px;
+    margin-right: 122px;
+    box-sizing: border-box;
+}
+
+.nomeDoUsuario{
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 94px;
+    margin-bottom: 295px;
+    box-sizing: border-box;
+
+    gap: 15px;
+}
+
+.nomeDoUsuario input{
+    width: 260px;
+    height: 54px;
+
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    background: #FFFFFF;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+
+    margin-top: 258px;
+    margin-left: 57px;
+    margin-right: 57px;
+    box-sizing: border-box;
+}
+
+.botao-entrada {
+    width: 109px;
+    height: 45px;
+
+    background: #E7E7E7;
+    border-radius: 9px;
+    border: none;
+
+    margin-left: 133px;
+    margin-right: 133px;
+    box-sizing: border-box;
+}
+
+.botao-entrada p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    color: #696969;
 }
 
 .topo img{ 
@@ -49,7 +134,7 @@ body {
     position: fixed;
     bottom: 0px;
 
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
 
     display: flex;
@@ -64,15 +149,15 @@ body {
 .mensagem input {
     border: none;
 
-    font-style: italic;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     color: #000000;
 }
 
-.mensagem input-placeholder {
+.mensagem-enviada ::placeholder {
     color: #000000;
+    font-style: italic;
 }
 
 .mensagens {
@@ -81,53 +166,58 @@ body {
     margin-top: 106px;
     margin-bottom: 106px;
     box-sizing: border-box;
+
+    overflow-wrap: break-all;
 }
 
 .status-sala{
-    height: 40px;
-
     background-color: #DCDCDC;
     border-radius: 2px;
 
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     box-sizing: border-box;
     padding: 0 8px;
 
     display: flex;
     align-items: center;
-
-    word-wrap: break-word;
 }
 
 .mensagem-todos{
-    height: 40px;
-
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     border-radius: 2px;
 
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     box-sizing: border-box;
     padding: 0 8px;
 
     display: flex;
     align-items: center;
-
-    word-wrap: break-word;
 }
 
 .mensagem-privada{
-    height: 40px;
-
-    background: #FFDEDE;
+    background-color: #FFDEDE;
     border-radius: 2px;
 
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     box-sizing: border-box;
     padding: 0 8px;
 
     display: flex;
     align-items: center;
+}
 
-    word-wrap: break-word;
+h1{
+    font-weight: bold;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+h3{
+    color: #AAAAAA;
+    margin-right: 3px;
+}
+
+.escondido {
+    display: none;
 }
 

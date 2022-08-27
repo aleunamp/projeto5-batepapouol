@@ -11,31 +11,33 @@
     <title>Bate-Papo UOL</title>
 </head>
 <body>
-    <div class="topo">
+    <div class="telaDeEntrada escondido">
         <img src="./imagens/logo-uol.png" class="logo"/>
-
-        <div class="ion-icon1"><ion-icon name="people-sharp"></ion-icon></div>     
+        <div class="nomeDoUsuario">
+            <input type="text"  placeholder="Digite seu nome">
+            <button class="botao-entrada" onclick="entradaNaSala(this)"><p>Enviar</p></button>
+        </div>
     </div>
 
-    <div class="mensagens">
-        <div class="status-sala">(09:21:45) João entra na sala...</div>
+    <div class="pagina">
+        <div class="topo">
+            <img src="./imagens/logo-uol.png" class="logo"/>
 
-        <div class="mensagem-todos">(09:22:28)  João para Todos:  Bom dia</div>
+            <div class="ion-icon1"><ion-icon name="people-sharp"></ion-icon></div>     
+        </div>
 
-        <div class="mensagem-todos">(09:22:38)  Maria para João:  Oi João :)</div>
+        <div class="mensagens"></div>
 
-        <div class="mensagem-privada">(09:22:48)  João reservadamente para Maria:  Oi gatinha quer tc?</div>
+        <div class="escrever-mensagem">
 
-        <div class="status-sala">(09:22:58)  Maria  sai da sala...</div>
+            <div class="mensagem"><input type="text" class="mensagem-enviada"  placeholder="Escreva aqui..."></div>
+        
+            <div class="ion-icon2"><ion-icon name="paper-plane-outline" onclick=" enviarMsgem()"></ion-icon></div>
+        </div>
     </div>
 
-    <div class="escrever-mensagem">
-
-        <div class="mensagem"><input type="text"  placeholder="Escreva aqui..."></div>
-    
-        <div class="ion-icon2"><ion-icon name="paper-plane-outline"></ion-icon></div>
-    </div>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
