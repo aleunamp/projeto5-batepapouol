@@ -166,9 +166,6 @@ body {
     margin-top: 106px;
     margin-bottom: 106px;
     box-sizing: border-box;
-
-    overflow-wrap: break-all;
-    word-wrap: break-word;
 }
 
 .status-sala{
@@ -181,6 +178,9 @@ body {
 
     display: flex;
     align-items: center;
+
+    overflow: hidden;
+    word-break: break-all
 }
 
 .mensagem-todos{
@@ -193,6 +193,9 @@ body {
 
     display: flex;
     align-items: center;
+
+    overflow: hidden;
+    word-break: break-all
 }
 
 .mensagem-privada{
@@ -205,15 +208,18 @@ body {
 
     display: flex;
     align-items: center;
+
+    overflow: hidden;
+    word-break: break-all;
 }
 
-h1{
+strong{
     font-weight: bold;
     margin-right: 3px;
     margin-left: 3px;
 }
 
-h3{
+.time {
     color: #AAAAAA;
     margin-right: 3px;
 }

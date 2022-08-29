@@ -79,23 +79,23 @@ function renderizarMsgens (){
     for (let i = 0; i < mensagens.length; i++) {
         if (mensagens[i].type === "status"){
             if (mensagens[i].text === "entra na sala..."){
-            let avisoStatus =  `<div class="status-sala"><h3>(${mensagens[i].time})</h3> <h1>${mensagens[i].from}</h1> entra na sala...</div>`;
+            let avisoStatus =  `<div class="status-sala"><span class="msgem-chat"><span class="time">(${mensagens[i].time})</span> <strong>${mensagens[i].from}</strong> entra na sala...</span></div>`;
             divMsgens.innerHTML += avisoStatus;
             }
 
             if (mensagens[i].text === "sai da sala..."){
-            let avisoStatus =  `<div class="status-sala"><h3>(${mensagens[i].time}) </h3>  <h1>${mensagens[i].from} </h1> sai da sala...</div>`;
+            let avisoStatus =  `<div class="status-sala"><span class="msgem-chat"><span class="time">(${mensagens[i].time})</span>  <strong>${mensagens[i].from}</strong> sai da sala...</span></div>`;
             divMsgens.innerHTML += avisoStatus;
             }
         }
 
         if (mensagens[i].type === "message"){
-            let msgem =  `<div class="mensagem-todos"><h3>(${mensagens[i].time})</h3> <h1>${mensagens[i].from}</h1> para <h1>${mensagens[i].to}</h1>: ${mensagens[i].text}</div>`;
+            let msgem =  `<div class="mensagem-todos"><span class="msgem-chat"><span class="time">(${mensagens[i].time})</span> <strong>${mensagens[i].from}</strong> para <strong>${mensagens[i].to}</strong>: ${mensagens[i].text}</span></div>`;
             divMsgens.innerHTML += msgem;
         }
 
         if (mensagens[i].type === "private_message" && mensagens[i].to === nomeUsuario){
-            let msgemReservada  = `<div class="mensagem-privada"><h3>(${mensagens[i].time})</h3> <h1>${mensagens[i].from}</h1> reservadamente para <h1>${mensagens[i].to}</h1>: ${mensagens[i].text}</div>`;
+            let msgemReservada  = `<div class="mensagem-privada"><span class="msgem-chat"><span class="time">(${mensagens[i].time})</span> <strong>${mensagens[i].from}</strong> reservadamente para <strong>${mensagens[i].to}</strong>: ${mensagens[i].text}</span></div>`;
             divMsgens.innerHTML += msgemReservada;
         }
 
