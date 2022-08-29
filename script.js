@@ -5,8 +5,9 @@ let mensagens = [];
 function entradaNaSala(){
     nomeUsuario = prompt("Qual nome de usuário você deseja?");
 
-    if (!nomeUsuario){
+    if (nomeUsuario === undefined || nomeUsuario === null || nomeUsuario === ''){
         alert("Preencha um nome, por favor!");
+        atualizaPagina();
     }
 
     let usuario = { 
@@ -14,7 +15,7 @@ function entradaNaSala(){
     };
 
     const promessa = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants", usuario);
-    promessa.then(beleza);
+    promessa.then(deuCerto);
     promessa.catch(deuErro);
 
 }
@@ -31,9 +32,25 @@ function deuErro(erro){
     atualizaPagina();
 }
 
-function beleza (resposta){
+function deuCerto (resposta){
     console.log(resposta);
-    console.log("deu tudo ok");
+}
+
+function manterConexao(){
+
+    let usuario = { 
+        name: nomeUsuario
+    };
+
+    const promessa = axios.post("https://mock-api.driven.com.br/api/v6/uol/status", usuario);
+    promessa.then(deuCerto);
+    promessa.catch(desconectado);
+    console.log("O usuário está conectado!");
+}
+
+function desconectado(erro){
+    console.log(erro);
+    atualizaPagina();
 }
 
 function atualizaPagina(){
@@ -52,7 +69,6 @@ function dadosChegaram(resposta){
 
     mensagens = resposta.data;
     renderizarMsgens();
-
 }
 
 function renderizarMsgens (){
@@ -66,8 +82,9 @@ function renderizarMsgens (){
             let avisoStatus =  `<div class="status-sala"><h3>(${mensagens[i].time})</h3> <h1>${mensagens[i].from}</h1> entra na sala...</div>`;
             divMsgens.innerHTML += avisoStatus;
             }
-            else if (mensagens[i].text === "sai na sala..."){
-            let avisoStatus =  `<div class="status-sala"><h3>(${mensagens[i].time}) </h3>  <h1> ${mensagens[i].from} </h1> sai da sala...</div>`;
+
+            if (mensagens[i].text === "sai da sala..."){
+            let avisoStatus =  `<div class="status-sala"><h3>(${mensagens[i].time}) </h3>  <h1>${mensagens[i].from} </h1> sai da sala...</div>`;
             divMsgens.innerHTML += avisoStatus;
             }
         }
@@ -82,7 +99,7 @@ function renderizarMsgens (){
             divMsgens.innerHTML += msgemReservada;
         }
 
-        document.querySelector(".mensagens").lastChild.scrollIntoView();
+        document.querySelector('.mensagens').lastChild.scrollIntoView();
     }
 }
 
@@ -107,10 +124,14 @@ function enviarMsgem(){
     document.querySelector('.mensagem-enviada').value = '';
 
     renderizarMsgens();
-
 }
 
+function avaliarConexao(){
+    setInterval(manterConexao, 5000);
+    setInterval(pegarMsgens, 3000);
+}
 
+avaliarConexao();
 
 
 

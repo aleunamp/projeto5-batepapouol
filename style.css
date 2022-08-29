@@ -155,7 +155,7 @@ body {
     color: #000000;
 }
 
-.mensagem-enviada ::placeholder {
+.mensagem-enviada :placeholder {
     color: #000000;
     font-style: italic;
 }
@@ -168,6 +168,7 @@ body {
     box-sizing: border-box;
 
     overflow-wrap: break-all;
+    word-wrap: break-word;
 }
 
 .status-sala{
