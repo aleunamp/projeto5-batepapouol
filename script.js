@@ -65,7 +65,7 @@ function pegarMsgens (){
 pegarMsgens();
 
 function dadosChegaram(resposta){
-    console.log("deu tudo ok");
+    console.log("Renderizando mensagens!");
 
     mensagens = resposta.data;
     renderizarMsgens();
@@ -94,7 +94,7 @@ function renderizarMsgens (){
             divMsgens.innerHTML += msgem;
         }
 
-        if (mensagens[i].type === "private_message" && mensagens[i].to === nomeUsuario){
+        if ((mensagens[i].type === "private_message" && mensagens[i].from === nomeUsuario) || (mensagens[i].to === nomeUsuario && mensagens[i].type === "private_message")){
             let msgemReservada  = `<div class="mensagem-privada"><span class="msgem-chat"><span class="time">(${mensagens[i].time})</span> <strong>${mensagens[i].from}</strong> reservadamente para <strong>${mensagens[i].to}</strong>: ${mensagens[i].text}</span></div>`;
             divMsgens.innerHTML += msgemReservada;
         }
@@ -114,8 +114,6 @@ function enviarMsgem(){
         text: msgem,
         type: "message"
     }
-
-    console.log(mensagemEnviada);
 
     const promessa = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", mensagemEnviada);
     promessa.then(pegarMsgens);
